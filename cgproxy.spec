@@ -24,6 +24,7 @@ BuildRequires:    systemd-rpm-macros
 %else
 BuildRequires:    systemd
 %endif
+BuildRequires:    json-devel
 
 
 %description
@@ -37,7 +38,8 @@ It resembles with proxychains and tsocks in default setting.
 
 %build
 %cmake  -Dbuild_execsnoop_dl=ON \
-        -Dbuild_static=OFF
+        -Dbuild_static=OFF \
+        -Dbuild_test=ON
 %cmake_build
 
 %install
